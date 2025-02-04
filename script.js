@@ -17,7 +17,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const nameInput = document.querySelector('#input_9259215262381');
     const phoneInput = document.querySelector('.js-phonemask-result.js-tilda-rule');
 
-    console.log(nameInput.value);
-    console.log(phoneInput.value);
+    const name = nameInput?.value?.trim();
+    const phone = phoneInput?.value?.replace(/\D/g, "");
+
+    if (!name?.length || phone?.length !== 12) {
+      return;
+    }
+
+    localStorage.setItem('user', JSON.stringify({
+      name, phone: '+' + phone, time: new Date().toLocaleString()
+    }))
+
+    window.location.href = window.location.origin + `/telegram.html`
   })
 })
