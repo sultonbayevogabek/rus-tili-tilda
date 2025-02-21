@@ -28,6 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
       name, phone: '+' + phone, time: new Date().toLocaleString()
     }))
 
-    window.location.href = window.location.origin + `https://russ-tilida.fulfiledu.uz/telegram.html`
+    window.location.href = `${window.location.origin}/telegram.html`
   })
 })
